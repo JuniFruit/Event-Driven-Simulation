@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="heap.js" defer></script>
+    <script src="math.js" defer></script>
+    <script src="simulation.js" defer></script>
+    <script src="main.js" defer></script>
+    <title>Event Driven Simulation</title>
+  </head>
+  <style>
+    *,
+    *::after,
+    *::before {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html,
+    body {
+      position: relative;
+      width: 100%;
+    }
+    #canvas {
+      width: 100%;
+      height: 100%;
+      display: block;
+      /* background-color: black; */
+    }
+    .box {
+      position: absolute;
+      left: 0;
+      width: 100%;
+      top: 10px;
+      display: flex;
+      justify-content: center;
+      gap: 0.25rem;
+    }
+    button {
+      cursor: pointer;
+      border: none;
+      outline: none;
+      background-color: #6d41a1;
+      font-size: 1.2rem;
+      color: white;
+      border-radius: 0.55rem;
+      padding: 0.25rem 0.5rem;
+      font-weight: lighter;
+      transition: all 0.2s;
+      width: 5rem;
+    }
+
+    button:hover {
+      background-color: #6e41a1e7;
+      color: rgba(255, 255, 255, 0.79);
+    }
+
+    .mass-label {
+      display: flex;
+      flex-direction: column;
+      font-weight: bold;
+    }
+    input {
+      outline: none;
+      padding: 0.25rem;
+      min-width: 10rem;
+    }
+  </style>
+  <body>
+    <canvas id="canvas"> </canvas>
+    <div class="box">
+      <label for="massInput" class="mass-label"
+        >Generate random mass
+        <input
+          id="massInput"
+          type="checkbox"
+          placeholder="number of molecules"
+        />
+      </label>
+      <button class="start" id="restart">Clear</button>
+      <button class="start" id="startBtn">Start</button>
+      <input
+        id="numInput"
+        type="number"
+        min="5"
+        max="200"
+        placeholder="number of molecules"
+      />
+    </div>
+  </body>
+</html>
